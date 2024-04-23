@@ -15,7 +15,10 @@ namespace LastTraining
             foreach (var m in manager.Foods)
             {
                 ListViewItem item = new ListViewItem();
-                item.Text = m.Name.ToString();
+                if (m is IAnko)
+                    item.Text = $"{m.Name}({m.ProductSize}){(m as IAnko).Anko}";
+                else
+                    item.Text = $"{m.Name}({m.ProductSize})";
 
                 ListViewItem.ListViewSubItem subItem = new ListViewItem.ListViewSubItem();
                 subItem.Text = m.TotalPrice.ToString();
@@ -23,7 +26,6 @@ namespace LastTraining
                 item.SubItems.Add(subItem);
                 listView.Items.Add(item);
             }
-            listView.Refresh();
         }
 
         private void orderButton_Click(object sender, EventArgs e)

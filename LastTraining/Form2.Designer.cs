@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.azukiButton = new System.Windows.Forms.RadioButton();
+            this.custardButton = new System.Windows.Forms.RadioButton();
+            this.kuriButton = new System.Windows.Forms.RadioButton();
             this.radioButton4 = new System.Windows.Forms.RadioButton();
             this.radioButton5 = new System.Windows.Forms.RadioButton();
             this.radioButton6 = new System.Windows.Forms.RadioButton();
@@ -38,42 +38,49 @@
             this.sizeGroup = new System.Windows.Forms.GroupBox();
             this.cancelButton = new System.Windows.Forms.Button();
             this.okButton = new System.Windows.Forms.Button();
+            this.ankoGroup = new System.Windows.Forms.GroupBox();
+            this.koshiButton = new System.Windows.Forms.RadioButton();
+            this.tsubuButton = new System.Windows.Forms.RadioButton();
             this.foodGroup.SuspendLayout();
             this.sizeGroup.SuspendLayout();
+            this.ankoGroup.SuspendLayout();
             this.SuspendLayout();
             // 
-            // radioButton1
+            // azukiButton
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(49, 33);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(52, 16);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "あずき";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.azukiButton.AutoSize = true;
+            this.azukiButton.Location = new System.Drawing.Point(49, 33);
+            this.azukiButton.Name = "azukiButton";
+            this.azukiButton.Size = new System.Drawing.Size(52, 16);
+            this.azukiButton.TabIndex = 0;
+            this.azukiButton.TabStop = true;
+            this.azukiButton.Text = "あずき";
+            this.azukiButton.UseVisualStyleBackColor = true;
+            this.azukiButton.CheckedChanged += new System.EventHandler(this.azukiButton_CheckedChanged);
             // 
-            // radioButton2
+            // custardButton
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(49, 93);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(68, 16);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "カスタード";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.custardButton.AutoSize = true;
+            this.custardButton.Location = new System.Drawing.Point(49, 93);
+            this.custardButton.Name = "custardButton";
+            this.custardButton.Size = new System.Drawing.Size(68, 16);
+            this.custardButton.TabIndex = 1;
+            this.custardButton.TabStop = true;
+            this.custardButton.Text = "カスタード";
+            this.custardButton.UseVisualStyleBackColor = true;
+            this.custardButton.CheckedChanged += new System.EventHandler(this.custardButton_CheckedChanged);
             // 
-            // radioButton3
+            // kuriButton
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(49, 171);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(35, 16);
-            this.radioButton3.TabIndex = 2;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "栗";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.kuriButton.AutoSize = true;
+            this.kuriButton.Location = new System.Drawing.Point(49, 171);
+            this.kuriButton.Name = "kuriButton";
+            this.kuriButton.Size = new System.Drawing.Size(35, 16);
+            this.kuriButton.TabIndex = 2;
+            this.kuriButton.TabStop = true;
+            this.kuriButton.Text = "栗";
+            this.kuriButton.UseVisualStyleBackColor = true;
+            this.kuriButton.CheckedChanged += new System.EventHandler(this.kuriButton_CheckedChanged);
             // 
             // radioButton4
             // 
@@ -110,9 +117,9 @@
             // 
             // foodGroup
             // 
-            this.foodGroup.Controls.Add(this.radioButton3);
-            this.foodGroup.Controls.Add(this.radioButton1);
-            this.foodGroup.Controls.Add(this.radioButton2);
+            this.foodGroup.Controls.Add(this.kuriButton);
+            this.foodGroup.Controls.Add(this.azukiButton);
+            this.foodGroup.Controls.Add(this.custardButton);
             this.foodGroup.Location = new System.Drawing.Point(68, 71);
             this.foodGroup.Name = "foodGroup";
             this.foodGroup.Size = new System.Drawing.Size(200, 253);
@@ -151,11 +158,45 @@
             this.okButton.UseVisualStyleBackColor = true;
             this.okButton.Click += new System.EventHandler(this.okButton_Click);
             // 
+            // ankoGroup
+            // 
+            this.ankoGroup.Controls.Add(this.tsubuButton);
+            this.ankoGroup.Controls.Add(this.koshiButton);
+            this.ankoGroup.Location = new System.Drawing.Point(629, 83);
+            this.ankoGroup.Name = "ankoGroup";
+            this.ankoGroup.Size = new System.Drawing.Size(200, 241);
+            this.ankoGroup.TabIndex = 10;
+            this.ankoGroup.TabStop = false;
+            this.ankoGroup.Text = "あんこ";
+            // 
+            // koshiButton
+            // 
+            this.koshiButton.AutoSize = true;
+            this.koshiButton.Location = new System.Drawing.Point(45, 81);
+            this.koshiButton.Name = "koshiButton";
+            this.koshiButton.Size = new System.Drawing.Size(60, 16);
+            this.koshiButton.TabIndex = 0;
+            this.koshiButton.TabStop = true;
+            this.koshiButton.Text = "こしあん";
+            this.koshiButton.UseVisualStyleBackColor = true;
+            // 
+            // tsubuButton
+            // 
+            this.tsubuButton.AutoSize = true;
+            this.tsubuButton.Location = new System.Drawing.Point(45, 131);
+            this.tsubuButton.Name = "tsubuButton";
+            this.tsubuButton.Size = new System.Drawing.Size(62, 16);
+            this.tsubuButton.TabIndex = 1;
+            this.tsubuButton.TabStop = true;
+            this.tsubuButton.Text = "つぶあん";
+            this.tsubuButton.UseVisualStyleBackColor = true;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(602, 448);
+            this.ClientSize = new System.Drawing.Size(876, 448);
+            this.Controls.Add(this.ankoGroup);
             this.Controls.Add(this.okButton);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.sizeGroup);
@@ -166,15 +207,17 @@
             this.foodGroup.PerformLayout();
             this.sizeGroup.ResumeLayout(false);
             this.sizeGroup.PerformLayout();
+            this.ankoGroup.ResumeLayout(false);
+            this.ankoGroup.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.RadioButton azukiButton;
+        private System.Windows.Forms.RadioButton custardButton;
+        private System.Windows.Forms.RadioButton kuriButton;
         private System.Windows.Forms.RadioButton radioButton4;
         private System.Windows.Forms.RadioButton radioButton5;
         private System.Windows.Forms.RadioButton radioButton6;
@@ -182,5 +225,8 @@
         private System.Windows.Forms.GroupBox sizeGroup;
         private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.Button okButton;
+        private System.Windows.Forms.GroupBox ankoGroup;
+        private System.Windows.Forms.RadioButton tsubuButton;
+        private System.Windows.Forms.RadioButton koshiButton;
     }
 }
